@@ -45,7 +45,15 @@ const App = () => {
           <TouchableOpacity
             style={styles.switchState}
             onPress={() => setExpressState(0)}>
-            <Text style={[styles.textSwitch, {color: '#00ff00', left: 20}]}>
+            <Text
+              style={[
+                styles.textSwitch,
+                {
+                  color: '#00ff00',
+                  left: 20,
+                  opacity: expressState === 0 ? 1 : 0.2,
+                },
+              ]}>
               :
             </Text>
           </TouchableOpacity>
@@ -78,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#fafafa',
   },
   switchContainer: {
     height: 50,
@@ -92,6 +100,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 999,
     zIndex: 10,
+    transform: [{rotateX: '10deg'}],
   },
   switchShadow: {
     position: 'absolute',
