@@ -43,6 +43,7 @@ const App = () => {
       <View style={styles.switchContainer}>
         <View style={styles.switchContent}>
           <TouchableOpacity
+            activeOpacity={0.8}
             style={styles.switchState}
             onPress={() => setExpressState(0)}>
             <Text
@@ -58,9 +59,18 @@ const App = () => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
+            activeOpacity={0.8}
             style={[styles.switchState, {alignItems: 'flex-end'}]}
             onPress={() => setExpressState(1)}>
-            <Text style={[styles.textSwitch, {color: '#dcbaaa', right: 20}]}>
+            <Text
+              style={[
+                styles.textSwitch,
+                {
+                  color: '#dcbaaa',
+                  right: 20,
+                  opacity: expressState === 1 ? 1 : 0.2,
+                },
+              ]}>
               :
             </Text>
           </TouchableOpacity>
